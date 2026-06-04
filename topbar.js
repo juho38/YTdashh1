@@ -23,7 +23,7 @@
   position: sticky; top: 0; z-index: 40;
   display: flex; gap: 6px;
   padding:
-    max(12px, env(safe-area-inset-top))
+    max(18px, env(safe-area-inset-top))
     max(14px, env(safe-area-inset-right))
     max(10px, env(safe-area-inset-bottom))
     max(14px, env(safe-area-inset-left));
@@ -115,17 +115,34 @@
 
 @media (max-width: 480px) {
   .topbar {
+    padding-top: max(18px, env(safe-area-inset-top));
     padding-left: max(10px, env(safe-area-inset-left));
     padding-right: max(10px, env(safe-area-inset-right));
-    gap: 4px;
+    gap: 5px;
   }
-  .topbar-pill, .topbar-water-pill { padding: 7px 9px; gap: 5px; }
-  .topbar-pill-label { font-size: 9px; letter-spacing: 0.10em; }
-  .topbar-pill-count { font-size: 11px; }
-  .topbar-water-add { width: 32px; font-size: 16px; }
+  .topbar-pill, .topbar-water-pill {
+    justify-content: center;
+    padding: 8px 6px;
+    gap: 0;
+  }
+  .topbar-pill-dot { display: none; }
+  .topbar-pill-label {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+  .topbar-pill-count { display: none; }
+  .topbar-water-wrap { flex: 1.18 1 0; }
+  .topbar-water-add { width: 28px; font-size: 15px; }
 }
 @media (max-width: 380px) {
-  .topbar-pill-label { display: none; }
+  .topbar {
+    padding-left: max(8px, env(safe-area-inset-left));
+    padding-right: max(8px, env(safe-area-inset-right));
+    gap: 4px;
+  }
+  .topbar-pill, .topbar-water-pill { padding-left: 5px; padding-right: 5px; }
+  .topbar-pill-label { font-size: 8px; letter-spacing: 0.06em; }
+  .topbar-water-add { width: 26px; }
 }
 
 /* === Global mobile lockdown ===
